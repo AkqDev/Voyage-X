@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>VOYAGE X: Global Discovery</title>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        /* Applying the Poppins font globally */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Ensure the body is not scrollable when the sidebar is open on mobile */
+        .sidebar-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="relative min-h-screen bg-cover bg-center" 
+        style="background-image: url('bg_1.jpg'); background-attachment: fixed;">
+
+        <nav class="bg-gray-900 bg-opacity-70 p-4 sticky top-0 z-50 shadow-lg transition-all duration-300" id="main-navbar">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="text-white text-3xl font-bold tracking-widest cursor-pointer">
+                    VOYAGE <span class="text-yellow-400">X</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">Home</a>
+                    <a href="#about-us" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">About</a>
+                    <a href="#vacation-ideas" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">Places</a>
+                    <a href="#destinations" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">Destinations</a>
+                    <a href="#restaurants" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">Eat & Stay</a>
+                    <a href="#faq" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">FAQ</a>
+                    <a href="#contact-footer" class="nav-link text-white hover:text-yellow-400 transition duration-300 text-lg font-medium py-1">Contact</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="hamburger-btn" class="text-white text-3xl focus:outline-none hover:text-yellow-400" onclick="opensidebar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-500 ease-in-out md:hidden z-[60]">
+                <div class="p-4 flex justify-end">
+                    <button class="text-white text-3xl focus:outline-none" onclick="closesidebar()">
+                        <i class="fa-solid fa-xmark hover:text-yellow-400 transition duration-300"></i>
+                    </button>
+                </div>
+
+                <h1 class="text-white text-3xl font-bold tracking-widest text-center my-8">
+                    VOYAGE <span class="text-yellow-400">X</span>
+                </h1>
+                
+                <ul class="flex flex-col space-y-2 px-6">
+                    <li><a href="#home" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">Home</a></li>
+                    <li><a href="#about-us" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">About</a></li>
+                    <li><a href="#vacation-ideas" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">Places</a></li>
+                    <li><a href="#destinations" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">Destinations</a></li>
+                    <li><a href="#restaurants" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">Eat & Stay</a></li>
+                    <li><a href="#faq" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">FAQ</a></li>
+                    <li><a href="#contact-footer" onclick="closesidebar();" class="block text-white text-xl hover:text-yellow-400 transition duration-300 p-2 border-b border-gray-700">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="p-8 md:p-24 flex items-center h-[90vh] z-10">
+            <div class="text-white fade-in-section is-visible w-full text-center md:text-left">
+                
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-4 tracking-tight">
+                    Explore. Discover.<br>Live More.
+                </h1>
+                
+                <p class="text-xl md:text-2xl font-light max-w-lg mx-auto md:mx-0 mb-8">
+                    Curated adventures and premium local expertise, powered by VOYAGE X.
+                </p>
+                
+                <a href="#vacation-ideas" class="inline-block px-8 py-3 bg-yellow-400 text-gray-900 font-bold 
+                                                rounded-full shadow-lg hover:bg-yellow-500 
+                                                transition duration-300 transform hover:scale-105">
+                    Start Your Journey
+                </a>
+
+            </div>
+        </div>
+    </div>
+    
+    <header class="bg-gray-50 py-12 px-4 fade-in-section">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-8 md:gap-12">
+            
+            <div class="w-full sm:w-[45%] lg:w-[30%] p-4 bg-white shadow-xl rounded-lg">
+                <h1 class="text-3xl font-bold mb-3">
+                    <span class="text-yellow-600 font-light mr-2">01</span> Travel
+                </h1>
+                <p class="text-gray-600 leading-relaxed text-base">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[30%] p-4 bg-white shadow-xl rounded-lg">
+                <h1 class="text-3xl font-bold mb-3">
+                    <span class="text-yellow-600 font-light mr-2">02</span> Experience
+                </h1>
+                <p class="text-gray-600 leading-relaxed text-base">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[30%] p-4 bg-white shadow-xl rounded-lg">
+                <h1 class="text-3xl font-bold mb-3">
+                    <span class="text-yellow-600 font-light mr-2">03</span> Relax
+                </h1>
+                <p class="text-gray-600 leading-relaxed text-base">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-4 max-w-7xl mx-auto fade-in-section" id="vacation-ideas">
+        <h1 class="text-3xl md:text-5xl font-bold text-center mb-12 text-gray-800">See Our Latest Vacation Ideas</h1>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+            
+            <div class="w-full sm:w-[45%] lg:w-[30%] h-80 bg-cover bg-center flex items-end rounded-xl shadow-xl transition duration-500 hover:scale-[1.02]" style="background-image: url('destination-1.jpg');">
+                <div class="bg-white text-center w-full p-4 rounded-b-xl">
+                    <h1 class="text-2xl font-serif font-semibold text-gray-900">Beachfront Escape</h1>
+                </div>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[30%] h-80 bg-cover bg-center flex items-end rounded-xl shadow-xl transition duration-500 hover:scale-[1.02]" style="background-image: url('destination-2.jpg');">
+                <div class="bg-white text-center w-full p-4 rounded-b-xl">
+                    <h1 class="text-2xl font-serif font-semibold text-gray-900">Group Holidays</h1>
+                </div>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[30%] h-80 bg-cover bg-center flex items-end rounded-xl shadow-xl transition duration-500 hover:scale-[1.02]" style="background-image: url('destination-3.jpg');">
+                <div class="bg-white text-center w-full p-4 rounded-b-xl">
+                    <h1 class="text-2xl font-serif font-semibold text-gray-900">City Breaks</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-100 fade-in-section">
+        <h1 class="text-3xl md:text-5xl font-bold text-center mb-12 text-gray-800">Travel Snapshots</h1>
+        <div class="relative max-w-5xl mx-auto px-4">
+            
+            <div id="image-carousel" class="overflow-hidden rounded-xl shadow-2xl">
+                
+                <div class="carousel-slide relative h-96 bg-cover bg-center transition-opacity duration-700 ease-in-out" style="background-image: url('destination-4.jpg');">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-center p-8">
+                        <h2 class="text-4xl font-bold text-white">Mountain Retreats</h2>
+                    </div>
+                </div>
+
+                <div class="carousel-slide hidden relative h-96 bg-cover bg-center transition-opacity duration-700 ease-in-out" style="background-image: url('restaurant-1.jpg');">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-center p-8">
+                        <h2 class="text-4xl font-bold text-white">Fine Dining Experiences</h2>
+                    </div>
+                </div>
+
+                <div class="carousel-slide hidden relative h-96 bg-cover bg-center transition-opacity duration-700 ease-in-out" style="background-image: url('about.jpg');">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-center p-8">
+                        <h2 class="text-4xl font-bold text-white">Urban Exploration</h2>
+                    </div>
+                </div>
+            </div>
+
+            <button id="carousel-prev" class="absolute top-1/2 left-0 md:left-4 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 transition duration-300 z-10">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="carousel-next" class="absolute top-1/2 right-0 md:right-4 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 transition duration-300 z-10">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+    
+    <div class="py-16 px-4 max-w-7xl mx-auto fade-in-section" id="about-us">
+        <div class="flex flex-wrap justify-between items-center gap-10">
+            <div class="w-full lg:w-[45%]">
+                <img src="about.jpg" alt="about" class="w-full h-auto object-cover rounded-xl shadow-2xl">
+            </div>
+
+            <div class="w-full lg:w-[45%] p-4">
+                <h1 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">The Ultimate Travel Partner</h1>
+                <p class="text-gray-600 leading-loose text-lg">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-center py-8 text-gray-800 fade-in-section" id="destinations">Most Popular Destinations</h1>
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-4 lg:gap-8 fade-in-section">
+        
+        <div class="w-full sm:w-[45%] lg:w-[48%] flex flex-col md:flex-row shadow-xl rounded-xl overflow-hidden mb-8 transition duration-300 hover:shadow-2xl">
+            <div class="md:w-1/2">
+                <img src="destination-4.jpg" alt="Paris, Italy" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2 flex justify-between items-baseline">
+                        Paris, Italy 
+                        <span class="text-blue-600 font-bold">$200</span>
+                    </h2>
+                    <p class="text-gray-500 mb-4">Far far away, behind the word mountains, far from the countries</p>
+                    <hr class="mb-4">
+                    <p class="text-gray-700 text-sm mb-4">2 days 3 nights</p>
+                </div>
+                <div class="flex justify-between items-center mt-auto">
+                    <h3 class="text-lg font-bold text-gray-800">San Franciso, CA</h3>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                        Discover
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full sm:w-[45%] lg:w-[48%] flex flex-col md:flex-row shadow-xl rounded-xl overflow-hidden mb-8 transition duration-300 hover:shadow-2xl">
+            <div class="md:w-1/2">
+                <img src="destination-2.jpg" alt="San Francisco" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2 flex justify-between items-baseline">
+                        San Francisco, CA
+                        <span class="text-blue-600 font-bold">$200</span>
+                    </h2>
+                    <p class="text-gray-500 mb-4">Far far away, behind the word mountains, far from the countries</p>
+                    <hr class="mb-4">
+                    <p class="text-gray-700 text-sm mb-4">2 days 3 nights</p>
+                </div>
+                <div class="flex justify-between items-center mt-auto">
+                    <h3 class="text-lg font-bold text-gray-800">Paris, Italy</h3>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                        Discover
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-green-700 bg-opacity-90 text-white py-16 mt-16 px-4 fade-in-section">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-around text-center gap-10">
+            <div class="w-full sm:w-1/2 lg:w-1/5">
+                <h1 class="text-5xl md:text-6xl font-bold mb-1">100,000</h1>
+                <p class="text-xl font-light">Happy Customers</p>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/5">
+                <h1 class="text-5xl md:text-6xl font-bold mb-1">40,000</h1>
+                <p class="text-xl font-light">Destination Places</p>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/5">
+                <h1 class="text-5xl md:text-6xl font-bold mb-1">87,000</h1>
+                <p class="text-xl font-light">Hotels</p>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/5">
+                <h1 class="text-5xl md:text-6xl font-bold mb-1">56,400</h1>
+                <p class="text-xl font-light">Restaurants</p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-center py-16 text-gray-800 fade-in-section" id="restaurants">Recommended Restaurants</h1>
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-8 md:gap-4 lg:gap-8 mb-16 fade-in-section">
+        
+        <div class="w-full sm:w-[45%] lg:w-[48%] flex flex-col md:flex-row shadow-xl rounded-xl overflow-hidden transition duration-300 hover:shadow-2xl">
+            <div class="md:w-1/2">
+                <img src="restaurant-1.jpg" alt="Luxury Restaurant" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">Luxury Restaurants</h2>
+                    <p class="text-gray-500 mb-4">Far far away, behind the word mountains, far from the countries</p>
+                    <hr class="mb-4">
+                </div>
+                <div class="flex justify-between items-center mt-auto">
+                    <h3 class="text-lg font-bold text-gray-800">San Franciso, CA</h3>
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full sm:w-[45%] lg:w-[48%] flex flex-col md:flex-row shadow-xl rounded-xl overflow-hidden transition duration-300 hover:shadow-2xl">
+            <div class="md:w-1/2">
+                <img src="restaurant-3.jpg" alt="Luxury Restaurant" class="w-full h-64 md:h-full object-cover">
+            </div>
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">Luxury Restaurants</h2>
+                    <p class="text-gray-500 mb-4">Far far away, behind the word mountains, far from the countries</p>
+                    <hr class="mb-4">
+                </div>
+                <div class="flex justify-between items-center mt-auto">
+                    <h3 class="text-lg font-bold text-gray-800">Paris, Italy</h3>
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-gray-50 py-16 px-4 fade-in-section" id="faq">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Frequently Asked Questions</h1>
+        <div class="max-w-4xl mx-auto space-y-4">
+            
+            <div class="accordion-item bg-white shadow-lg rounded-lg overflow-hidden">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-gray-800 hover:bg-gray-100 transition duration-300 focus:outline-none">
+                    <span>What types of trips do you offer?</span>
+                    <i class="fa-solid fa-plus text-yellow-600 transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content px-5 bg-gray-50">
+                    <p class="py-4 text-gray-600">We offer a wide range of trips including luxury beachfront escapes, group holidays, city breaks, and custom tailored adventures to suit any need. Explore our 'Places' section for more ideas!</p>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-white shadow-lg rounded-lg overflow-hidden">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-gray-800 hover:bg-gray-100 transition duration-300 focus:outline-none">
+                    <span>How can I book a recommended restaurant?</span>
+                    <i class="fa-solid fa-plus text-yellow-600 transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content px-5 bg-gray-50">
+                    <p class="py-4 text-gray-600">Each restaurant listing includes a "Book Now" button. Clicking this will direct you to a mock booking page or partner site for reservation. We aim to make the process as seamless as possible!</p>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-white shadow-lg rounded-lg overflow-hidden">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-gray-800 hover:bg-gray-100 transition duration-300 focus:outline-none">
+                    <span>Do you offer package deals for hotels and flights?</span>
+                    <i class="fa-solid fa-plus text-yellow-600 transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content px-5 bg-gray-50">
+                    <p class="py-4 text-gray-600">Yes, we partner with top providers to offer curated package deals that often include flights, luxury accommodations, and local experiences for a streamlined vacation planning process.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-4 fade-in-section" id="contact-footer">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-10">
+            
+            <div class="w-full sm:w-[45%] lg:w-[45%]"> 
+                <h1 class="text-4xl font-bold mb-4 tracking-wider">VOYAGE <span class="text-yellow-400">X</span></h1>
+                <p class="text-gray-400 leading-relaxed text-base">
+                    VOYAGE X is your dedicated partner for discovering the world's most breathtaking destinations. 
+                    We curate personalized itineraries, offering everything from serene beach holidays to thrilling mountain adventures. 
+                    Our mission is to turn your travel dreams into seamless, unforgettable realities by providing expert local knowledge and exceptional service every step of the way. 
+                    Explore with confidence, discover with passion.
+                </p>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[20%]">
+                <h1 class="text-2xl font-bold mb-4">Information</h1>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Online enquiry</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Call Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">General enquiries</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Booking Conditions</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Privacy and Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="w-full sm:w-[45%] lg:w-[20%]">
+                <h1 class="text-2xl font-bold mb-4">Experience</h1>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Beach</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Adventure</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Wildlife</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Honeymoon</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Nature</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-200">Party</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer> 
+    
+    <div class="bg-black text-gray-400 text-center py-4 text-sm">
+        <p>Copyright ©2024 All rights reserved | Template made by Akbar Qureshi</p>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" 
+    class="fixed bottom-6 right-6 bg-yellow-400 hover:bg-yellow-500 text-gray-900 
+            p-0 w-12 h-12 flex items-center justify-center rounded-full 
+            shadow-lg transition duration-300">
+    <i class="fa-solid fa-arrow-up text-lg"></i>
+</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>
