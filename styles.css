@@ -1,54 +1,49 @@
-    *{
-        padding:0%;
-        margin:0%;
-        box-sizing:border-box;
-        font-family:sans-serif;
-    }
+*{
+padding:0%;
+margin:0%;
+box-sizing:border-box;
+font-family:sans-serif;
+}
 
-    html {
-            scroll-behavior: smooth;
-        }
-        /* Initial state for main sections (Fade-in/Scroll-reveal) */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* NEW: Initial state for children within fade-in sections (Staggered effect) */
-        /* Targets direct children that we want to animate/stagger, typically cards or blocks */
-        .fade-in-section > div, .fade-in-section > h1, .fade-in-section > p, .fade-in-section > header {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+html {
+scroll-behavior: smooth;
+}
+.fade-in-section {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+opacity: 1;
+transform: translateY(0);
+}
 
-        /* NEW: Visible state for children */
-        .fade-in-section.is-visible > div, .fade-in-section.is-visible > h1, .fade-in-section.is-visible > p, .fade-in-section.is-visible > header {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.fade-in-section > div, .fade-in-section > h1, .fade-in-section > p, .fade-in-section > header {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-        /* Custom class for the scroll-to-top button */
-        #scrollTopBtn {
-            display: none; 
-            z-index: 100;
-        }
+.fade-in-section.is-visible > div, .fade-in-section.is-visible > h1, .fade-in-section.is-visible > p, .fade-in-section.is-visible > header {
+opacity: 1;
+transform: translateY(0);
+}
 
-         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-        /* Applying the Poppins font globally */
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        /* Ensure the body is not scrollable when the sidebar is open on mobile */
-        .sidebar-open {
-            overflow: hidden;
-        }
+#scrollTopBtn {
+display: none; 
+z-index: 100;
+}
+
+ .accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-in-out;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-open {
+overflow: hidden;
+}
