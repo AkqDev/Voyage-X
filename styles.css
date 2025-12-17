@@ -38,3 +38,17 @@
             display: none; 
             z-index: 100;
         }
+
+         .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        /* Applying the Poppins font globally */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Ensure the body is not scrollable when the sidebar is open on mobile */
+        .sidebar-open {
+            overflow: hidden;
+        }
