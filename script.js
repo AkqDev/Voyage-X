@@ -33,7 +33,6 @@ function scrollToTop() {
 
 // Function to highlight the active link in the navigation bar
 function highlightActiveLink(scrollPosition) {
-    // Target sections and the main div with an ID (like #home)
     const sections = document.querySelectorAll('section[id], div[id]'); 
     const navLinks = document.querySelectorAll('.nav-link');
     
