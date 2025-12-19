@@ -29,8 +29,6 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); 
 }
 
-// --- 2. Scroll-to-Top Button, Sticky Navbar, Parallax, and ScrollSpy Listener ---
-
 // Function to highlight the active link in the navigation bar
 function highlightActiveLink(scrollPosition) {
     const sections = document.querySelectorAll('section[id], div[id]'); 
@@ -68,18 +66,14 @@ window.onscroll = function() {
     
     // a) Scroll-to-Top Button Toggle
     if (scrollTopBtn) {
-        // Use flex/block based on your CSS, but flex is appropriate if using fa-icon for centering
-        scrollTopBtn.style.display = scrollPosition > 300 ? "flex" : "none";
+       scrollTopBtn.style.display = scrollPosition > 300 ? "flex" : "none";
     }
 
-    // b) Sticky Navbar Transformation (Make it solid after scrolling past hero)
     if (mainNavbar) {
         if (scrollPosition > heroHeight - 100) { 
-            // Apply solid background for sticky state
             mainNavbar.classList.remove("bg-opacity-70");
             mainNavbar.classList.add("bg-opacity-100", "bg-gray-900");
         } else {
-            // Apply translucent background for home state
             mainNavbar.classList.remove("bg-opacity-100", "bg-gray-900");
             mainNavbar.classList.add("bg-opacity-70");
         }
