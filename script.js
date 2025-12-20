@@ -85,11 +85,9 @@ window.onscroll = function() {
     highlightActiveLink(scrollPosition);
 };
 
-// --- 3. Animated Number Counter Functionality ---
 function animateCount(element, finalValue) {
     let startTimestamp = null;
-    const duration = 2000; // Animation duration in ms (2 seconds)
-
+    const duration = 5000;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
