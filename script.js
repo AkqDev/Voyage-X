@@ -107,7 +107,6 @@ function animateCount(element, finalValue) {
     window.requestAnimationFrame(step);
 }
 
-// --- 8. Form Submission and Validation (Declared globally for accessibility) ---
 function validateContactForm(event) {
     event.preventDefault(); 
     
