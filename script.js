@@ -141,7 +141,6 @@ function validateContactForm(event) {
 // --- DOMContentLoaded: Initial setup and logic activation ---
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Initialize scroll button to hidden
     if (scrollTopBtn) {
         scrollTopBtn.style.display = "none";
     }
