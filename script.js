@@ -82,8 +82,6 @@ window.onscroll = function() {
     if (heroSection) {
         heroSection.style.backgroundPositionY = (-scrollPosition * 0.2) + 'px';
     }
-    
-    // d) ScrollSpy: Highlight Active Navigation Link
     highlightActiveLink(scrollPosition);
 };
 
