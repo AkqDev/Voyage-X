@@ -79,7 +79,6 @@ window.onscroll = function() {
         }
     }
 
-    // c) Simple Parallax Effect on Hero Background (Background attachment: fixed required in CSS)
     if (heroSection) {
         heroSection.style.backgroundPositionY = (-scrollPosition * 0.2) + 'px';
     }
