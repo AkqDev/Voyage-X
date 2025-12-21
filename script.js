@@ -267,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const prevButton = document.getElementById('carousel-prev');
         const nextButton = document.getElementById('carousel-next');
 
-        // Add event listeners for navigation buttons (with interaction pause)
         if (prevButton) {
             prevButton.addEventListener('click', prevSlide);
             prevButton.addEventListener('click', restartAutoplay);
