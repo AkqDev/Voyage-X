@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function() {
         scrollTopBtn.style.display = "none";
     }
 
-    // --- 4. Intersection Observer for Scroll Animations (Fade-In & Counter) ---
     const sections = document.querySelectorAll(".fade-in-section");
     const observerOptions = {
         root: null, 
